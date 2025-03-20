@@ -18,7 +18,8 @@ var start = false
 @onready var frontRight_wheel = $"Front Right"
 @onready var backRight_wheel = $"Back Right"
 @onready var frontLeft_wheel = $"Front Left"
-@onready var timer = $timer
+@onready var timer = $"../UI/timer"
+
 var time_elapsed = 0
 var look_at
 # Store camera position when finishing
@@ -152,5 +153,6 @@ func finish_race():
 	finish_camera_rotation = camera_pivot.rotation
 	finish_camera_basis = camera_pivot.global_basis
 	print("Vehicle marked as finished!")
+	timer.stop()
 	# Show mouse cursor when race is finished
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

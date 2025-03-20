@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cs757hia37qho"]
+[gd_scene load_steps=14 format=3 uid="uid://bik5xvwjwnnpd"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_vsrga"]
 [ext_resource type="PackedScene" uid="uid://4hqyrtbh7lx4" path="res://TestMap.tscn" id="2_gfnct"]
@@ -27,7 +27,7 @@ script/source = "extends Label
 var time_elapsed := 0.0
 var is_stopped := false
 
-@onready var player = $\"../Player\"
+@onready var player = $\"../Vehicle\"
 func _process(delta: float) -> void:
 	time_elapsed += delta
 	if time_elapsed <= 3:
@@ -57,7 +57,7 @@ size = Vector3(90.1957, 1, 1)
 
 [node name="Node3D2" type="Node3D"]
 script = ExtResource("1_vsrga")
-player_scene = ExtResource("2_laxwu")
+player_scene = ExtResource("4_5q17w")
 
 [node name="Vehicle" parent="." instance=ExtResource("4_5q17w")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0.9523, -1.72748)
@@ -126,7 +126,7 @@ theme_override_font_sizes/font_size = 40
 text = "0 MPH"
 script = ExtResource("3_u5m6h")
 
-[node name="coutndown" type="Label" parent="UI"]
+[node name="countdown" type="Label" parent="UI"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -145,14 +145,14 @@ horizontal_alignment = 1
 script = SubResource("GDScript_qvesi")
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.90141, -0.138113, 170.062)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.901, -0.138, -189.98)
 script = ExtResource("8_vcls1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
-transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 1, -2.74088, 0, 0)
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 1, 18.9879, 1.62886, 141.47)
 mesh = SubResource("BoxMesh_oq2qt")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74088, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6308, 141.434)
 shape = SubResource("BoxShape3D_cm21y")
